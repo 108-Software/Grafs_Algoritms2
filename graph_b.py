@@ -54,17 +54,10 @@ class fler:
         if len(self.graph[u]) == 1:
             return True
         else:
-            '''
-             2) Если существует несколько смежных, то u-v не является мостом
-                Выполните следующие действия, чтобы проверить, является ли u-v мостом
-
-            2.a) количество вершин, достижимых из u'''
 
             visited = [False] * (self.V)
             count1 = self.DFSCount(u, visited)
 
-            '''2.b) Удалите ребро (u, v) и после удаления ребра посчитайте
-                вершины, достижимые из u'''
             self.rmvEdge(u, v)
             visited = [False] * (self.V)
             count2 = self.DFSCount(u, visited)
